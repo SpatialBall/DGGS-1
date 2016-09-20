@@ -43,7 +43,8 @@ public abstract @Data class QTM extends DGGS {
     private QTM leftChild;
     private QTM rightChild;
 
-// methods
+
+    // methods
 
     public QTM() {    }
 

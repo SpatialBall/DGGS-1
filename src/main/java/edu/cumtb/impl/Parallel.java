@@ -91,7 +91,7 @@ public class Parallel extends QTM {
                 getRightChild().dispose();
                 setRightChild(null);
             }
-            if (getIsInit() == false) {
+            if (isInit() == false) {
                 init();
             }
         }
@@ -112,7 +112,7 @@ public class Parallel extends QTM {
                 setCoreChild(child);
             }
             if (getLeftChild() == null) {
-                child =  new Parallel(getAddress() + "2", getCurrentSubdivisionLevel() + 1, getMinlatitude(), latitudeCenter, getMinLongitude(), longitudeCenter);
+                child =  new Parallel(getAddress() + "2", getCurrentSubdivisionLevel() + 1, getMinLatitude(), latitudeCenter, getMinLongitude(), longitudeCenter);
                 setLeftChild(child);
             }
             if (getRightChild() == null) {
@@ -147,7 +147,7 @@ public class Parallel extends QTM {
             getLeftChild().render(drawContext);
             getRightChild().render(drawContext);
         } else {
-            if (getIsInit() == true) {
+            if (isInit() == true) {
                 GL2 gl = drawContext.getGL().getGL2();
                 beginDrawing(drawContext);
                 gl.glBegin(GL2.GL_LINE_STIPPLE);
